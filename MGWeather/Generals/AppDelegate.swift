@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        do {
+//            // Delete the realm if a migration would be required, instead of migrating it.
+//            // While it's useful during development, do not leave this set to `true` in a production app!
+//            let configuration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+//            let realm = try Realm(configuration: configuration)
+//        } catch {
+//            print("Error opening realm: \(error.localizedDescription)")
+//        }
+        // opening the Realm file now makes sure that the migration is performed
         return true
     }
 
